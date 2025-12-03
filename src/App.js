@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./MyComponents/Header";
+import Todos from "./MyComponents/Todos";
+import Footer from "./MyComponents/Footer";
+import AddTodo from "./MyComponents/AddTodo";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [todos, setTodos] = useState([
+        {sno: 1, title: "React", desc: "React Video"},
+        {sno: 2, title: "React Native", desc: "React Native"},
+        {sno: 3, title: "Node.js", desc: "Node.js Video"},
+    ]);
+
+    const onDelete = (todo) => {
+        console.log("Delete", todo);
+        setTodos(todos.filter((e)=>{
+            return e!==todo;
+        }))
+    }
+
+    return (
+        <>
+            <Header title="Todo List" search={false}/>
+            <AddTodo />
+            <Todos todos={todos} onDelete = {onDelete}/>
+            <Footer/>
+        </>
+    );
 }
 
 export default App;
