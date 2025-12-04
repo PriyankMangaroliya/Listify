@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer(props) {
     let footerstyle = {
-        position: 'absolute',
+        position: 'relative',
         top: "94vh",
         width: '100%'
     }
