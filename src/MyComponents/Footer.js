@@ -1,19 +1,20 @@
 import React from 'react';
 
-function Footer(props) {
-    let footerstyle = {
-        position: 'relative',
-        top: "94vh",
-        width: '100%'
-    }
+function Footer() {
     return (
-        <div className="">
-                <div className="bg-dark text-light pb-1 pt-3" style={footerstyle}>
-                    <p className="text-center">
-                        Copyright &copy; All rights reserved
+        <footer className="mt-auto py-3" style={{backgroundColor: '#2c3e50'}}>
+            <div className="container">
+                <div className="text-center text-white">
+                    <p className="mb-0">
+                        <i className="bi bi-c-circle me-1"></i>
+                        {new Date().getFullYear()} Listify Task Manager. All rights reserved.
                     </p>
+                    <small className="text-light opacity-75">
+                        Built with React & Bootstrap
+                    </small>
                 </div>
-        </div>
+            </div>
+        </footer>
     );
 }
 
